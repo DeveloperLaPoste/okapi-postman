@@ -1,0 +1,3348 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Caroline",
+		"_postman_id": "bd291354-45db-652c-0af8-7adf371e9461",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. suivi",
+			"description": "",
+			"item": [
+				{
+					"name": "Suivi sandbox",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/suivi/v1/1111111111119",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "https://{{host}}/suivi/v1/1111111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				},
+				{
+					"name": "Suivi Pris en charge",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/suivi/v1/1111111111111",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "https://{{host}}/suivi/v1/1111111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				},
+				{
+					"name": "Suivi Inconnu",
+					"request": {
+						"url": "{{protocol}}://{{api}}/suivi/v1?code=RJ662687824CN",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "inconnu",
+							"originalRequest": {
+								"url": "http://{{host}}/suivi/v1?code=RJ662687824CN",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 15:06:40 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": "A name for the server"
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 825,
+							"body": "{\"code\":\"RJ662687824CN\",\"date\":\"\",\"status\":\"INCONNU\",\"message\":\"\",\"link\":\" http://www.csuivi.courrier.laposte.fr/suivi/index?id=RJ662687824CN\",\"type\":\"Courrier International\"}"
+						}
+					]
+				},
+				{
+					"name": "Suivi Code produit invalide",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code is 200\"] = responseCode.code === 400;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/suivi/v1/1H9P7NJHYATPO",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Suivi Numero 13 caracteres",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code is 400\"] = responseCode.code === 400;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/suivi/v1/0",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Suivi Aucun produit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code is 404\"] = responseCode.code === 404;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/suivi/v1/0011111111111",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "RESOURCE_NOT_FOUND",
+							"originalRequest": {
+								"url": "http://{{host}}/suivi/v1/0011111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 15:20:24 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": "A name for the server"
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 221,
+							"body": "{\"message\":\"Aucun produit ne correspond à votre recherche.\",\"code\":\"RESOURCE_NOT_FOUND\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "2. controladresse",
+			"description": "",
+			"item": [
+				{
+					"name": "ControlAdresse Sandbox",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses?q=BP 71 015 44010 Nantes Cedex",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAdresse Detail Sandbox",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses/349610",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAdresse 1 Elsa",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses?q=21 Quai Louis Blériot 75016 Paris",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAdresse 1 Elsa Detail",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses/8641830",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok2",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses/379536",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": ""
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": ""
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 14:42:28 GMT",
+									"description": ""
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": ""
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": ""
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": ""
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": 314,
+							"body": "{\"numeroVoie\":\"21\",\"libelleVoie\":\"QUAI LOUIS BLERIOT\",\"codePostal\":\"75016\",\"commune\":\"PARIS\",\"blocAdresse\":[\"21 QUAI LOUIS BLERIOT\",\"75016 PARIS\"]}"
+						}
+					]
+				},
+				{
+					"name": "ControlAdresse 2 Philippe",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses?q=62 rue victor hugo puteaux",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses?q=62 rue victor hugo puteaux",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 14:16:09 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": "A name for the server"
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 492,
+							"body": "[{\"code\":\"379582\",\"adresse\":\"62 RUE VICTOR HUGO 92800 PUTEAUX\"},{\"code\":\"379583\",\"adresse\":\"BATIMENT A RESIDENCE VICTOR HUGO 62 RUE VICTOR HUGO 92800 PUTEAUX\"},{\"code\":\"379584\",\"adresse\":\"BATIMENT B RESIDENCE VICTOR HUGO 62 RUE VICTOR HUGO 92800 PUTEAUX\"},{\"code\":\"379585\",\"adresse\":\"BATIMENT C RESIDENCE VICTOR HUGO 62 RUE VICTOR HUGO 92800 PUTEAUX\"},{\"code\":\"379586\",\"adresse\":\"BATIMENT D RESIDENCE VICTOR HUGO 62 RUE VICTOR HUGO 92800 PUTEAUX\"}]"
+						}
+					]
+				},
+				{
+					"name": "ControlAdresse 2 Philippe Detail",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses/379773",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses/379773",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 14:44:09 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": "A name for the server"
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 356,
+							"body": "{\"pointRemise\":\"BATIMENT A RESIDENCE VICTOR HUGO\",\"numeroVoie\":\"62\",\"libelleVoie\":\"RUE VICTOR HUGO\",\"codePostal\":\"92800\",\"commune\":\"PUTEAUX\",\"blocAdresse\":[\"BATIMENT A RESIDENCE VICTOR HUGO\",\"62 RUE VICTOR HUGO\",\"92800 PUTEAUX\"]}"
+						}
+					]
+				},
+				{
+					"name": "ControlAdresse 3 Maison Radio",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses?q=116 avenue du Président Kennedy 75220 Paris Cedex 16",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAdresse 3 Maison Radio Detail",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses/357245",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses/357245",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": ""
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": ""
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 08:47:49 GMT",
+									"description": ""
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": ""
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": ""
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": ""
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": 280,
+							"body": "{\"identiteDestinataire\":\"TELEDIFFUSION DE FRANCE\",\"pointRemise\":\"\",\"complementPointRemise\":\"\",\"numeroVoie\":\"116\",\"libelleVoie\":\"AVENUE DU PRESIDENT KENNEDY\",\"complementVoie\":\"\",\"codePostal\":\"75016\",\"codeCedex\":\"75220\",\"localite\":\"PARIS CEDEX 16\",\"ligne1\":\"TELEDIFFUSION DE FRANCE\",\"ligne2\":\"\",\"ligne3\":\"\",\"ligne4\":\"116 AVENUE DU PRESIDENT KENNEDY\",\"ligne5\":\"\",\"ligne6\":\"75220 PARIS CEDEX 16\",\"ligne7\":\"\"}"
+						},
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses/357245",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": ""
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": ""
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 14:23:45 GMT",
+									"description": ""
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": ""
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": ""
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": ""
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": 541,
+							"body": "{\"destinataire\":\"TELEDIFFUSION DE FRANCE\",\"numeroVoie\":\"116\",\"libelleVoie\":\"AVENUE DU PRESIDENT KENNEDY\",\"codePostal\":\"75016\",\"codeCedex\":\"75220\",\"localite\":\"PARIS CEDEX 16\",\"lignes\":[\"TELEDIFFUSION DE FRANCE\",\"116 AVENUE DU PRESIDENT KENNEDY\",\"75220 PARIS CEDEX 16\"]}"
+						}
+					]
+				},
+				{
+					"name": "ControlAdresse 4 Travis",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses?q=67 Frederick Cres, Port Ellen, Isle of Islay PA42 7BD, United Kingdom",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses?q=67 Frederick Cres, Port Ellen, Isle of Islay PA42 7BD, United Kingdom",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": ""
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": ""
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 14:29:24 GMT",
+									"description": ""
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": ""
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": ""
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": ""
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": 797,
+							"body": "[{\"code\":\"379641\",\"adresse\":\"67 FREDERICK CRES PORT ELLEN ISLE OF ISLAY PA42 7BD EQUITIVE UNITED KINGDOM TSA 81 BD DE LA BATAILLE DE STALINGRAD 69626 VILLEURBANNE CEDEX\"}]"
+						}
+					]
+				},
+				{
+					"name": "ControlAdresse 4 Travis Detail",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses/379641",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAdresse 5 Lieu Dit",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses?q=8 av adoua antibes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses?q=8 av adoua antibes",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": ""
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": ""
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 14:32:31 GMT",
+									"description": ""
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": ""
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": ""
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": ""
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": 305,
+							"body": "[{\"code\":\"379654\",\"adresse\":\"8 AVENUE D ADOUA JUAN LES PINS 06160 ANTIBES\"}]"
+						}
+					]
+				},
+				{
+					"name": "ControlAdresse 5 Lieu Dit Détail",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses/379829",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses/379829",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": ""
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": ""
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": ""
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 14:32:00 GMT",
+									"description": ""
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": ""
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": ""
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": ""
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": 484,
+							"body": "{\"numeroVoie\":\"8\",\"libelleVoie\":\"AVENUE D ADOUA\",\"lieuDit\":\"JUAN LES PINS\",\"codePostal\":\"06160\",\"localite\":\"ANTIBES\",\"lignes\":[\"8 AVENUE D ADOUA\",\"JUAN LES PINS\",\"06160 ANTIBES\"]}"
+						}
+					]
+				},
+				{
+					"name": "ControlAdresse Cadburry",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses?q=143 Boulevard Romain Rolland Paris 75014",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses?q=143 Boulevard Romain Rolland Paris 75014",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 15:19:32 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": "A name for the server"
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 482,
+							"body": "[{\"code\":\"381921\",\"adresse\":\"143 BOULEVARD ROMAIN ROLLAND 75014 PARIS\"}]"
+						}
+					]
+				},
+				{
+					"name": "ControlAdresse Cadburry Detail",
+					"request": {
+						"url": "{{protocol}}://{{api}}/controladresse/v1/adresses/381921",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses/356405",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 08:35:38 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": "A name for the server"
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 269,
+							"body": "{\"identiteDestinataire\":\"\",\"pointRemise\":\"\",\"complementPointRemise\":\"\",\"numeroVoie\":\"143\",\"libelleVoie\":\"BOULEVARD ROMAIN ROLLAND\",\"complementVoie\":\"\",\"codePostal\":\"75014\",\"codeCedex\":\"\",\"localite\":\"PARIS\",\"ligne1\":\"\",\"ligne2\":\"\",\"ligne3\":\"\",\"ligne4\":\"143 BOULEVARD ROMAIN ROLLAND\",\"ligne5\":\"\",\"ligne6\":\"75014 PARIS\",\"ligne7\":\"\"}"
+						},
+						{
+							"name": "ok",
+							"originalRequest": {
+								"url": "http://{{host}}/controladresse/v1/adresses/381921",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Connection",
+									"key": "Connection",
+									"value": "keep-alive",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"name": "Content-Encoding",
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Mon, 23 May 2016 15:19:45 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Server",
+									"key": "Server",
+									"value": "nginx/1.7.4",
+									"description": "A name for the server"
+								},
+								{
+									"name": "Transfer-Encoding",
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Accept-Encoding, Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#1",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 303,
+							"body": "{\"numeroVoie\":\"143\",\"libelleVoie\":\"BOULEVARD ROMAIN ROLLAND\",\"codePostal\":\"75014\",\"commune\":\"PARIS\",\"blocAdresse\":[\"143 BOULEVARD ROMAIN ROLLAND\",\"75014 PARIS\"]}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "3. datanova",
+			"description": "",
+			"item": [
+				{
+					"name": "Datanova pointscontact Sandbox",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/datanova/v1/pointscontact?q=paris",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "http://{{host}}/datanova/v1/pointscontact?q=paris",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": ""
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": ""
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": ""
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": ""
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				},
+				{
+					"name": "Datanova pointscontact",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/datanova/v1/pointscontact?q=paris",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "https://{{host}}/suivi/v1/1111111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				},
+				{
+					"name": "Datanova codespostaux",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/datanova/v1/codespostaux?q=paris",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "https://{{host}}/suivi/v1/1111111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				},
+				{
+					"name": "Datanova servicesbureaux",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/datanova/v1/servicesbureaux?q=puteaux",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "https://{{host}}/suivi/v1/1111111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				},
+				{
+					"name": "Datanova communesnouvelles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/datanova/v1/communesnouvelles?q=paris",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Datanova Horaires Bureaux",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/datanova/v1/horairesbureaux?q=florac",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Datanova Automate Bureaux",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/datanova/v1/automatesbureaux?q=florac",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Datanova Accessibilité Bureaux",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/datanova/v1/accessibilitebureaux?q=florac",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4. tarifenvoi",
+			"description": "",
+			"item": [
+				{
+					"name": "Tarif Envoi Lettre 200g",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/tarifenvoi/v1/?type=lettre&poids=200",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "https://{{host}}/suivi/v1/1111111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				},
+				{
+					"name": "Tarif Envoi Colis 800g",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/tarifenvoi/v1/?type=colis&poids=800",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "https://{{host}}/suivi/v1/1111111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				},
+				{
+					"name": "Tarif Envoi Chronopost 800g",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code should be 200\"] = responseCode.code === 200;"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/tarifenvoi/v1/?type=chronopost&poids=800",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"name": "PRIS_EN_CHARGE",
+							"originalRequest": {
+								"url": "https://{{host}}/suivi/v1/1111111111111",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "X-OKAPI-KEY",
+										"value": "{{key}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "javascript",
+							"_postman_previewtype": "html",
+							"header": [
+								{
+									"name": "Content-Length",
+									"key": "Content-Length",
+									"value": "263",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"name": "Content-Type",
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"description": "The mime type of this content"
+								},
+								{
+									"name": "Date",
+									"key": "Date",
+									"value": "Thu, 28 Apr 2016 09:23:33 GMT",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"name": "Vary",
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"name": "X-Powered-By",
+									"key": "X-Powered-By",
+									"value": "okapi-api/0.4.0#4",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 113,
+							"body": "{\"code\":\"1111111111111\",\"date\":\"22/02/2016\",\"status\":\"PRIS_EN_CHARGE\",\"message\":\"Envoi pris en charge par Chronopost chez l'expéditeur\",\"link\":\"http://www.chronopost.fr/expedier/inputLTNumbersNoJahia.do?lang=fr_FR&listeNumeros=1111111111111\",\"type\":\"Chronopost\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "5. digiposte",
+			"description": "",
+			"item": [
+				{
+					"name": "Authentification Authorize",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var jsonData = JSON.parse(responseBody);\ntests[\"Access Token exists\"] = jsonData.access_token !== undefined;\npostman.setEnvironmentVariable(\"digi_access_token\", jsonData.access_token);\n"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/oauth/authorize",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{okapi_key}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://getshirt.io",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Authentification Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var jsonData = JSON.parse(responseBody);\ntests[\"Access Token exists\"] = jsonData.access_token !== undefined;\npostman.setEnvironmentVariable(\"digi_access_token\", jsonData.access_token);\n"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/oauth/token",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "type",
+									"value": "password",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "client_id",
+									"value": "{{okapi_key}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "username",
+									"value": "{{digi_username}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "{{digi_password}}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CGU",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/cgu",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lister les documents",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/documents?index=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lister un document ",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/documents/881d7c82b77c4d14831b5decabe30df5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Document",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/documents",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archive",
+									"type": "file",
+									"enabled": true,
+									"src": "document.md"
+								},
+								{
+									"key": "title",
+									"value": "Readme.md",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Document Geo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": "postman.setEnvironmentVariable(\"date_iso\", new Date().toISOString());\nconsole.log(postman.getEnvironmentVariable(\"date_iso\"));"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/documents/geo",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archive",
+									"value": "",
+									"type": "file",
+									"enabled": true
+								},
+								{
+									"key": "title",
+									"value": "test.geo.upload.md",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "timestamp",
+									"value": "2016-08-30T10:00:03Z",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "latitude",
+									"value": "123.123",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "longitude",
+									"value": "222.333",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "hdop",
+									"value": "0.86",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Merge Document to PDF",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "console.log(postman.getResponseHeader(\"Content-Type\"));"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": "postman.setEnvironmentVariable(\"date_iso\", new Date().toISOString());\nconsole.log(postman.getEnvironmentVariable(\"date_iso\"));"
+							}
+						}
+					],
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/documents/merge",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archives",
+									"type": "file",
+									"enabled": true,
+									"src": "angular2-logo.png"
+								},
+								{
+									"key": "title",
+									"value": "test.merge.upload",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "timestamp",
+									"value": "asd",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Merge Document Geo to PDF",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/documents/merge/geo",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "archives",
+									"type": "file",
+									"enabled": true,
+									"src": "angular2-logo.png"
+								},
+								{
+									"key": "title",
+									"value": "test.merge.upload",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "timestamp",
+									"value": "{{date_iso}}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "latitude",
+									"value": "123.123",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "longitude",
+									"value": "123.123",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "hdop",
+									"value": "0.88",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Download document ",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/procedures",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Récupérer Avatar",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/profile/avatar",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Infos Profil",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/profile",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Dashboard",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/dashboard",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lister les documents du profil",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/profile/documents",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Lister les dossiers",
+					"request": {
+						"url": "{{protocol}}://{{api}}/digiposte/v1/folders",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{digi_access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "6. traceo",
+			"description": "",
+			"item": [
+				{
+					"name": "test login en direct",
+					"request": {
+						"url": "{{protocol}}://{{api}}/traceo/v1/viplist?enveloppe_id= 3C00036544509",
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-okapi-key",
+								"value": "{{okapi_key}}",
+								"description": ""
+							},
+							{
+								"key": "x-okapi-app-name",
+								"value": "OpenApp",
+								"description": ""
+							},
+							{
+								"key": "x-okapi-user-email",
+								"value": "openhoat@laposte.io",
+								"description": ""
+							},
+							{
+								"key": "x-okapi-subscription-plan",
+								"value": "free",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic Qk5VTTpCTlVN",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "7. codeDeLaRoute",
+			"description": "",
+			"item": [
+				{
+					"name": "Get sessions",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/sessions?idSite=32533&dateMin=2016-09-01T00:00:00.001Z&dateMax=2016-10-01T00:00:00.001Z",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get sites",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/sites?departement=34",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get session",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/sessions/808959",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get reservations",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/reservations?idSession=808959",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idSession\": \"808959\",\n  \"neph\": \"what is it?\",\n  \"dateNaissance\": \"01/02/1980\",\n  \"nom\": \"Julie\",\n  \"prenom\": \"Test\",\n  \"civilite\": \"F\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST a reservation",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/reservations",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "noagrement",
+								"value": "123",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idSession\": \"808959\",\n  \"neph\": \"what is it?\",\n  \"dateNaissance\": \"01/02/1980\",\n  \"nom\": \"Julie\",\n  \"prenom\": \"Test\",\n  \"civilite\": \"F\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update a reservation",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/reservations/123",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "noagrement",
+								"value": "123",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idSession\": \"808959\",\n  \"neph\": \"what is it?\",\n  \"dateNaissance\": \"01/02/1980\",\n  \"nom\": \"Julie\",\n  \"prenom\": \"Test\",\n  \"civilite\": \"F\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a reservation",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/reservations/123",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "noagrement",
+								"value": "123",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST a prereservation",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/prereservations",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "noagrement",
+								"value": "123",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idSession\": \"808959\",\n  \"nbPlaces\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get resultats",
+					"request": {
+						"url": "{{protocol}}://{{api}}/codedelaroute/v1/resultats?nephs=11111111",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-OKAPI-KEY",
+								"value": "{{okapi_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
