@@ -1,0 +1,289 @@
+{
+	"variables": [],
+	"info": {
+		"name": "xebicon-handson",
+		"_postman_id": "54e17793-dcf5-4065-660a-25fd64f41c73",
+		"description": "API handson",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "giphy-create-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 201'] = responseCode.code === 201;\nif (responseCode.code === 201) {\n    const jsonData = JSON.parse(responseBody);\n    postman.setEnvironmentVariable('api_giphy_id', jsonData.id);\n}"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": "postman.clearEnvironmentVariable('api_giphy_id');"
+					}
+				}
+			],
+			"request": {
+				"url": "{{adminBaseUrl}}/apis",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NGFiYzFhYmMtMWFiYy00YWJjLThhYmMtMWFiYzFhYmMxYWJjOjJiQ0RUK25OVWZmQnFUemdsV2QxRGtLb0Nqb3FyajNiWHFzQldzWFNmVlJXLzQrNGd5ckFrUFM0RmU0L21UYW0=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Giphy\",\n  \"urlContext\": \"giphy\",\n  \"version\": \"1\",\n  \"endpoint\": \"http://api.giphy.com/v1\",\n  \"published\": true,\n  \"public\": true,\n  \"extra\": {\n    \"qs\": {\n      \"api_key\": \"dc6zaTOxFJmzC\", \n      \"limit\": 1\n    }\n  }\n}"
+				},
+				"description": "Create Giphy API"
+			},
+			"response": []
+		},
+		{
+			"name": "giphy-create-resource-search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 201'] = responseCode.code === 201;"
+					}
+				}
+			],
+			"request": {
+				"url": "{{adminBaseUrl}}/resources",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NGFiYzFhYmMtMWFiYy00YWJjLThhYmMtMWFiYzFhYmMxYWJjOjJiQ0RUK25OVWZmQnFUemdsV2QxRGtLb0Nqb3FyajNiWHFzQldzWFNmVlJXLzQrNGd5ckFrUFM0RmU0L21UYW0=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Search gif\",\n    \"method\": \"get\",\n    \"route\": \"/search\",\n    \"endpoint\": \"/gifs/search\",\n    \"published\": true,\n    \"public\": true,\n    \"apiId\": \"{{api_giphy_id}}\"\n}"
+				},
+				"description": "Create Giphy search resource"
+			},
+			"response": []
+		},
+		{
+			"name": "giphy-consume-search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 200'] = responseCode.code === 200;\nif (responseCode.code === 200) {\n    const jsonData = JSON.parse(responseBody);\n    console.log('gif :', jsonData.data[0]['embed_url']);\n}"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": "postman.clearEnvironmentVariable('giphy_img_url');"
+					}
+				}
+			],
+			"request": {
+				"url": "{{apiBaseUrl}}/giphy/v1/search?q=moto",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Search gif\",\n    \"apiId\": \"{{api_giphy_id}}\",\n    \"method\": \"get\",\n    \"route\": \"/search\",\n    \"endpoint\": \"/gifs/search\",\n    \"published\": true,\n    \"public\": true\n}"
+				},
+				"description": "Consume Giphy search resource"
+			},
+			"response": []
+		},
+		{
+			"name": "slack-create-api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 201'] = responseCode.code === 201;\nif (responseCode.code === 201) {\n    const jsonData = JSON.parse(responseBody);\n    postman.setEnvironmentVariable('api_slack_id', jsonData.id);\n}"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": "postman.clearEnvironmentVariable('api_slack_id');"
+					}
+				}
+			],
+			"request": {
+				"url": "{{adminBaseUrl}}/apis",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NGFiYzFhYmMtMWFiYy00YWJjLThhYmMtMWFiYzFhYmMxYWJjOjJiQ0RUK25OVWZmQnFUemdsV2QxRGtLb0Nqb3FyajNiWHFzQldzWFNmVlJXLzQrNGd5ckFrUFM0RmU0L21UYW0=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Slack\",\n  \"urlContext\": \"slack\",\n  \"version\": \"1\",\n  \"endpoint\": \"https://slack.com/api\",\n  \"published\": true,\n  \"public\": true,\n  \"extra\": {\n    \"qs\": {\n      \"token\": \"xoxp-85812740149-85817094615-85927211602-9019c5a0b64a047f347211d5fc5998d1\",\n      \"username\": \"Okapi Super Bot\"\n    }\n  }\n}"
+				},
+				"description": "Create Slack API"
+			},
+			"response": []
+		},
+		{
+			"name": "slack-create-resource-message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 201'] = responseCode.code === 201;\npostman.clearEnvironmentVariable('api_slack_id');"
+					}
+				}
+			],
+			"request": {
+				"url": "{{adminBaseUrl}}/resources",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NGFiYzFhYmMtMWFiYy00YWJjLThhYmMtMWFiYzFhYmMxYWJjOjJiQ0RUK25OVWZmQnFUemdsV2QxRGtLb0Nqb3FyajNiWHFzQldzWFNmVlJXLzQrNGd5ckFrUFM0RmU0L21UYW0=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Post message\",\n  \"method\": \"post\",\n  \"route\": \"/:channel\",\n  \"endpoint\": \"/chat.postMessage\",\n  \"published\": true,\n  \"extra\": {\n    \"qs\": {\n      \"pretty\": 1\n    },\n    \"plugins\": [\n      {\n        \"before\": \"api.req.method = 'get'; delete api.req.body; api.req.qs = Object.assign(api.req.qs || {}, { channel: params.channel }, req.body);\"\n      }\n    ]\n  },\n  \"apiId\": \"{{api_slack_id}}\"\n}"
+				},
+				"description": "Create Slack message resource"
+			},
+			"response": []
+		},
+		{
+			"name": "slack-consume-message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 200'] = responseCode.code === 200;"
+					}
+				}
+			],
+			"request": {
+				"url": "{{apiBaseUrl}}/slack/v1/demo",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Hey!!\"\n}"
+				},
+				"description": "Consume Slack message resource"
+			},
+			"response": []
+		},
+		{
+			"name": "giphy-create-resource-message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 201'] = responseCode.code === 201;\npostman.clearEnvironmentVariable('api_giphy_id');"
+					}
+				}
+			],
+			"request": {
+				"url": "{{adminBaseUrl}}/resources",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NGFiYzFhYmMtMWFiYy00YWJjLThhYmMtMWFiYzFhYmMxYWJjOjJiQ0RUK25OVWZmQnFUemdsV2QxRGtLb0Nqb3FyajNiWHFzQldzWFNmVlJXLzQrNGd5ckFrUFM0RmU0L21UYW0=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Post gif to Slack\",\n  \"method\": \"post\",\n  \"route\": \"/search\",\n  \"endpoint\": \"/gifs/search\",\n  \"published\": true,\n  \"extra\": {\n    \"plugins\": [{\n      \"before\": \"api.req.method = 'get';\",\n      \"after\": \"const imgUrl = _.chain(api.body).get('data').first().get('images.fixed_height.url').value(); if (!imgUrl) { errors.throwHttpNotFound(); } return cli.api('slack').version('1').resource('/demo').body({text: `GIF matching \\\"${req.query.q}\\\" : ${imgUrl}`}).post().spread((apiRes, apiBody) => {res.status(202).end();});\"\n    }]\n  },\n  \"apiId\": \"{{api_giphy_id}}\"\n}"
+				},
+				"description": "Create Giphy message resource"
+			},
+			"response": []
+		},
+		{
+			"name": "giphy-consume-message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 202'] = responseCode.code === 202;"
+					}
+				}
+			],
+			"request": {
+				"url": "{{apiBaseUrl}}/giphy/v1/search?q=moto",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Consume Giphy message resource"
+			},
+			"response": []
+		}
+	]
+}
