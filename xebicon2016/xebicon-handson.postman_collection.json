@@ -153,7 +153,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"Slack\",\n  \"urlContext\": \"slack\",\n  \"version\": \"1\",\n  \"endpoint\": \"https://slack.com/api\",\n  \"published\": true,\n  \"public\": true,\n  \"extra\": {\n    \"qs\": {\n      \"token\": \"xoxp-85812740149-85817094615-85927211602-9019c5a0b64a047f347211d5fc5998d1\",\n      \"username\": \"Okapi Super Bot\"\n    }\n  }\n}"
+					"raw": "{\n  \"name\": \"Slack\",\n  \"urlContext\": \"slack\",\n  \"version\": \"1\",\n  \"endpoint\": \"https://slack.com/api\",\n  \"published\": true,\n  \"public\": true,\n  \"extra\": {\n    \"qs\": {\n      \"token\": \"myToken\",\n      \"username\": \"Okapi Super Bot\"\n    }\n  }\n}"
 				},
 				"description": "Create Slack API"
 			},
