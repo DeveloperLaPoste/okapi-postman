@@ -153,7 +153,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"Slack\",\n  \"urlContext\": \"slack\",\n  \"version\": \"1\",\n  \"endpoint\": \"https://slack.com/api\",\n  \"published\": true,\n  \"public\": true,\n  \"extra\": {\n    \"qs\": {\n      \"token\": \"myToken\",\n      \"username\": \"Okapi Super Bot\"\n    }\n  }\n}"
+					"raw": "{\n  \"name\": \"Slack\",\n  \"urlContext\": \"slack\",\n  \"version\": \"1\",\n  \"endpoint\": \"https://slack.com/api\",\n  \"published\": true,\n  \"public\": true,\n  \"extra\": {\n    \"qs\": {\n      \"token\": \"{{slackApiToken}}\",\n      \"username\": \"Okapi Super Bot\"\n    }\n  }\n}"
 				},
 				"description": "Create Slack API"
 			},
@@ -200,7 +200,7 @@
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"exec": "tests['Status code is 200'] = responseCode.code === 200;"
+						"exec": "tests['Status code is 200'] = responseCode.code === 200;\nif (responseCode.code === 200) {\n    const jsonData = JSON.parse(responseBody);\n    tests['JSON data has ok equal true'] = jsonData.ok;\n    tests['JSON data has no error'] = jsonData.error === undefined;\n}"
 					}
 				}
 			],

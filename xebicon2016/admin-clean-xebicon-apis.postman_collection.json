@@ -55,14 +55,14 @@
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"exec": "tests['Status code is 204'] = responseCode.code === 204;\nif (responseCode.code === 204) {\n    const resourceIds = (postman.getEnvironmentVariable('xebicon_resource_ids') || '').split(',').filter(item => item);\n    if (resourceIds.length) {\n        postman.setNextRequest('delete-resources');\n        return;\n    }\n}\npostman.clearEnvironmentVariable('xebicon_resource_ids');\npostman.setNextRequest('delete-apis');"
+						"exec": "tests['Status code is 204'] = responseCode.code === 204;\nif (responseCode.code === 204) {\n    const resourceIds = (environment['xebicon_resource_ids'] || '').split(',').filter(item => item);\n    if (resourceIds.length) {\n        postman.setNextRequest('delete-resources');\n        return;\n    }\n}\npostman.clearEnvironmentVariable('xebicon_resource_ids');\npostman.setNextRequest('delete-apis');"
 					}
 				},
 				{
 					"listen": "prerequest",
 					"script": {
 						"type": "text/javascript",
-						"exec": "const resourceIds = (postman.getEnvironmentVariable('xebicon_resource_ids') || '').split(',').filter(item => item);\nconst resourceId = resourceIds.shift();\npostman.setEnvironmentVariable('xebicon_resource_id', resourceId);\npostman.setEnvironmentVariable('xebicon_resource_ids', resourceIds.join(','));"
+						"exec": "const resourceIds = (environment['xebicon_resource_ids'] || '').split(',').filter(item => item);\nconst resourceId = resourceIds.shift();\npostman.setEnvironmentVariable('xebicon_resource_id', resourceId);\npostman.setEnvironmentVariable('xebicon_resource_ids', resourceIds.join(','));"
 					}
 				}
 			],
@@ -96,14 +96,14 @@
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"exec": "tests['Status code is 204'] = responseCode.code === 204;\nif (responseCode.code === 204) {\n    const apiIds = (postman.getEnvironmentVariable('xebicon_api_ids') || '').split(',').filter(item => item);\n    if (apiIds.length) {\n        postman.setNextRequest('delete-apis');\n        return;\n    }\n}\npostman.clearEnvironmentVariable('xebicon_api_ids');\npostman.setNextRequest(null);"
+						"exec": "tests['Status code is 204'] = responseCode.code === 204;\nif (responseCode.code === 204) {\n    const apiIds = (environment['xebicon_api_ids'] || '').split(',').filter(item => item);\n    if (apiIds.length) {\n        postman.setNextRequest('delete-apis');\n        return;\n    }\n}\npostman.clearEnvironmentVariable('xebicon_api_ids');\npostman.setNextRequest(null);"
 					}
 				},
 				{
 					"listen": "prerequest",
 					"script": {
 						"type": "text/javascript",
-						"exec": "const apiIds = (postman.getEnvironmentVariable('xebicon_api_ids') || '').split(',').filter(item => item);\nconst apiId = apiIds.shift();\npostman.setEnvironmentVariable('xebicon_api_id', apiId);\npostman.setEnvironmentVariable('xebicon_api_ids', apiIds.join(','));"
+						"exec": "const apiIds = (environment['xebicon_api_ids'] || '').split(',').filter(item => item);\nconst apiId = apiIds.shift();\npostman.setEnvironmentVariable('xebicon_api_id', apiId);\npostman.setEnvironmentVariable('xebicon_api_ids', apiIds.join(','));"
 					}
 				}
 			],
