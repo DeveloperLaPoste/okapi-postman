@@ -166,7 +166,7 @@
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"exec": "tests['Status code is 201'] = responseCode.code === 201;\npostman.clearEnvironmentVariable('api_slack_id');"
+						"exec": "tests['Status code is 201'] = responseCode.code === 201;"
 					}
 				}
 			],
@@ -229,7 +229,7 @@
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"exec": "tests['Status code is 201'] = responseCode.code === 201;\npostman.clearEnvironmentVariable('api_giphy_id');"
+						"exec": "tests['Status code is 201'] = responseCode.code === 201;"
 					}
 				}
 			],
