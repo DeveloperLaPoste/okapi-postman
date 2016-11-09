@@ -1,0 +1,134 @@
+{
+	"variables": [],
+	"info": {
+		"name": "admin-clean-xebicon-apis",
+		"_postman_id": "aa53add7-5e79-dc24-87d4-c4bd0c99fac8",
+		"description": "Clean apis and resources created for Xebicon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get-apis",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 200'] = responseCode.code === 200;\nif (responseCode.code === 200) {\n    const jsonData = JSON.parse(responseBody);\n    tests['Response data is a JSON array'] = Array.isArray(jsonData);\n    if (jsonData.length) {\n        const apiIds = jsonData.map(item => item.id);\n        if (apiIds.length) {\n            postman.setEnvironmentVariable('xebicon_api_ids', apiIds.join(','));\n            const resourceIds = jsonData.reduce((ar, item) => ar.concat(item.resourceIds), []);\n            if (resourceIds.length) {\n                postman.setEnvironmentVariable('xebicon_resource_ids', resourceIds.join(','));\n                postman.setNextRequest('delete-resources');\n                return;\n            } else {\n                postman.setNextRequest('delete-apis');\n                return;\n            }\n        }\n    }\n}\npostman.clearEnvironmentVariable('xebicon_api_ids');\npostman.clearEnvironmentVariable('xebicon_api_id');\npostman.clearEnvironmentVariable('xebicon_resource_ids');\npostman.clearEnvironmentVariable('xebicon_resource_id');\npostman.clearEnvironmentVariable('api_giphy_id');\npostman.clearEnvironmentVariable('api_slack_id');\npostman.setNextRequest(null);"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": "postman.clearEnvironmentVariable('xebicon_api_ids');\npostman.clearEnvironmentVariable('xebicon_resource_ids');"
+					}
+				}
+			],
+			"request": {
+				"url": "{{adminBaseUrl}}/apis?select=name:{{apiNamesFilter}}&pick=id,resourceIds",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NGFiYzFhYmMtMWFiYy00YWJjLThhYmMtMWFiYzFhYmMxYWJjOjJiQ0RUK25OVWZmQnFUemdsV2QxRGtLb0Nqb3FyajNiWHFzQldzWFNmVlJXLzQrNGd5ckFrUFM0RmU0L21UYW0=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Giphy\",\n  \"urlContext\": \"giphy\",\n  \"version\": \"1\",\n  \"endpoint\": \"http://api.giphy.com/v1\",\n  \"published\": true,\n  \"public\": true,\n  \"extra\": {\n    \"qs\": {\n      \"api_key\": \"dc6zaTOxFJmzC\", \n      \"limit\": 1\n    }\n  }\n}"
+				},
+				"description": "Get apis"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-resources",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 204'] = responseCode.code === 204;\nif (responseCode.code === 204) {\n    const resourceIds = (environment['xebicon_resource_ids'] || '').split(',').filter(item => item);\n    if (resourceIds.length) {\n        postman.setNextRequest('delete-resources');\n        return;\n    }\n}\npostman.clearEnvironmentVariable('xebicon_resource_ids');\npostman.clearEnvironmentVariable('xebicon_resource_id');\npostman.setNextRequest('delete-apis');"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": "const resourceIds = (environment['xebicon_resource_ids'] || '').split(',').filter(item => item);\nconst resourceId = resourceIds.shift();\npostman.setEnvironmentVariable('xebicon_resource_id', resourceId);\npostman.setEnvironmentVariable('xebicon_resource_ids', resourceIds.join(','));"
+					}
+				}
+			],
+			"request": {
+				"url": "{{adminBaseUrl}}/resources/{{xebicon_resource_id}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NGFiYzFhYmMtMWFiYy00YWJjLThhYmMtMWFiYzFhYmMxYWJjOjJiQ0RUK25OVWZmQnFUemdsV2QxRGtLb0Nqb3FyajNiWHFzQldzWFNmVlJXLzQrNGd5ckFrUFM0RmU0L21UYW0=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Delete resources"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-apis",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests['Status code is 204'] = responseCode.code === 204;\nif (responseCode.code === 204) {\n    const apiIds = (environment['xebicon_api_ids'] || '').split(',').filter(item => item);\n    if (apiIds.length) {\n        postman.setNextRequest('delete-apis');\n        return;\n    }\n}\npostman.clearEnvironmentVariable('xebicon_api_ids');\npostman.clearEnvironmentVariable('xebicon_api_id');\npostman.clearEnvironmentVariable('api_giphy_id');\npostman.clearEnvironmentVariable('api_slack_id');\npostman.setNextRequest(null);"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": "const apiIds = (environment['xebicon_api_ids'] || '').split(',').filter(item => item);\nconst apiId = apiIds.shift();\npostman.setEnvironmentVariable('xebicon_api_id', apiId);\npostman.setEnvironmentVariable('xebicon_api_ids', apiIds.join(','));"
+					}
+				}
+			],
+			"request": {
+				"url": "{{adminBaseUrl}}/apis/{{xebicon_api_id}}",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic NGFiYzFhYmMtMWFiYy00YWJjLThhYmMtMWFiYzFhYmMxYWJjOjJiQ0RUK25OVWZmQnFUemdsV2QxRGtLb0Nqb3FyajNiWHFzQldzWFNmVlJXLzQrNGd5ckFrUFM0RmU0L21UYW0=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Delete apis"
+			},
+			"response": []
+		}
+	]
+}
